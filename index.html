@@ -1,36 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>404 - Space Exploration</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="scene">
-        <div class="planet">
+        <div class="planet" aria-label="Purple planet with a rover and a 404 flag">
             <div class="crater"></div>
             <div class="crater"></div>
             <div class="crater"></div>
             <div class="crater"></div>
             <div class="crater"></div>
-            
-            <div class="rover">
+
+            <div class="rover" aria-hidden="true">
                 <div class="body"></div>
                 <div class="wheels"></div>
                 <div class="trace"></div>
             </div>
-            
+
             <div class="flag">404</div>
         </div>
-        
-        <div class="message">
+
+        <main class="message">
+            <h1>404 — Lost in Space</h1>
+
             <p>
-                There is no life, try to find 
-                <a href="https://codepen.io/ddly/">something else</a>
+                There is no life here. Try exploring
+                <a href="https://codepen.io/ddly/">somewhere else</a>.
             </p>
-        </div>
+
+            <form class="search-form" id="searchForm" novalidate>
+                <label for="soul-search">Destination coordinates</label>
+
+                <input
+                    type="text"
+                    id="soul-search"
+                    name="destination"
+                    placeholder="Enter a URL or search term..."
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="off"
+                    aria-describedby="searchError"
+                    aria-invalid="false"
+                    required
+                >
+
+                <p
+                    id="searchError"
+                    class="search-error"
+                    role="alert"
+                ></p>
+
+                <button type="submit" id="search-btn">
+                    Explore 🚀
+                </button>
+            </form>
+
+            <p
+                class="search-feedback"
+                id="searchFeedback"
+                aria-live="polite"
+            ></p>
+        </main>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
