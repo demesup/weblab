@@ -197,7 +197,39 @@ body {
   border-bottom: 0.1rem dotted var(--accent-link);
   transition: color 0.2s ease;
 }
+/* ===== Random feature: stars ===== */
+.star {
+  position: fixed;
+  z-index: -1;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+  animation: twinkle ease-in-out infinite alternate;
+}
 
+@keyframes twinkle {
+  from { opacity: 0.2; transform: scale(0.8); }
+  to   { opacity: 1;   transform: scale(1.2); }
+}
+
+.shooting-star {
+  position: fixed;
+  width: 120px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 0 8px 2px var(--accent-link);
+  pointer-events: none;
+  transform: rotate(-35deg);
+  transform-origin: left center;
+  animation: shoot 1s ease-out forwards;
+}
+
+@keyframes shoot {
+  from { opacity: 1; translate: 0 0; width: 0; }
+  to   { opacity: 0; translate: 250px -175px; width: 120px; }
+}
 .message p a:hover {
   color: #ffffff;
 }
